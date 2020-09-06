@@ -1,0 +1,24 @@
+baseURL = "https://pravilna.by"
+
+title = "Правільна!"
+description = "desc"
+
+DefaultContentLanguage = "be"
+languageCode = "be-BY"
+
+publishDir = "docs"
+theme="spelling"
+
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+
+googleAnalytics = "UA-127301756-1"
+
+[[menu.main]]
+    name = "GitHub"
+    weight = 2
+    url = "https://github.com/Alroniks/pravilnaby"
+
+[[menu.main]]
+    name = "Падтрымаць праект"
+    weight = 1
+    url = "/support"

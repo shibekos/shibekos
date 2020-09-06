@@ -1,0 +1,38 @@
+{{ define "title" }} {{ .Title }} {{ end }}
+
+{{ define "prev" }}
+  {{ if .NextInSection }}
+    <link rel="prev" href="{{ .NextInSection.Permalink }}">
+  {{ end }}
+{{ end }}
+
+{{ define "next" }}
+  {{ if .PrevInSection }}
+    <link rel="next" href="{{ .PrevInSection.Permalink }}">
+  {{ end }}
+{{ end }}
+
+{{ define "main"}}
+
+  {{ partial "rule-unlinked" . }}
+
+  <div class="likely">
+    <div class="twitter">Твітнуць</div>
+    <div class="facebook">Падзяліцца</div>
+  <div class="vkontakte">Запосціць</div>
+  <div class="telegram">Адправіць</div>
+  </div>
+  
+  <nav>
+    {{ if .NextInSection }}
+      <a href="{{ .NextInSection.Permalink }}" class="prev"><span>&larr;</span>&nbsp;{{ .NextInSection.Title }}</a>
+    {{ else }}
+      <span></span>
+    {{ end }}
+    {{ if .PrevInSection }}
+      <a href="{{ .PrevInSection.Permalink }}" class="next">{{ .PrevInSection.Title }}&nbsp;<span>&rarr;</span></a>
+    {{ else }}
+      <span></span>
+    {{ end }}  
+  </nav>
+{{ end }}
